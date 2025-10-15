@@ -1,0 +1,76 @@
+.food-display {
+  margin-top: 30px;
+  padding: 0 20px; 
+}
+
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 500;
+  text-align: left; /* center on all screens */
+  margin-bottom: 20px;
+}
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  row-gap: 50px;
+  justify-content: center;
+}
+
+/* Base image style */
+.food-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .food-display h2 {
+    font-size: 22px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    row-gap: 40px;
+  }
+}
+
+/* Small screens (large phones / portrait tablets) */
+@media (max-width: 768px) {
+  .food-display {
+    padding: 0 15px;
+  }
+  .food-display h2 {
+    font-size: 20px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    row-gap: 35px;
+  }
+  .food-item img {
+    max-width: 250px; /* optional limit */
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 485px) {
+  .food-display {
+    padding: 0 10px;
+  }
+  .food-display h2 {
+    font-size: 18px;
+  }
+  .food-display-list {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
+    row-gap: 30px;
+  }
+  .food-item img {
+    width: 100%;     /* fill card */
+    max-width: none; /* remove size restriction */
+  }
+}

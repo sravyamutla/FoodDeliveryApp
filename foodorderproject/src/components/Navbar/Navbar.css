@@ -1,0 +1,134 @@
+/* Navbar container */
+.navbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff; /* clean background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Brand logo / title */
+.navbar h2 {
+  color: orangered;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Main menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-size: 18px;
+  color: black;
+}
+
+.navbar li {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar li:hover {
+  color: orangered;
+}
+
+.navbar .active {
+  color: orangered;
+  font-weight: 600;
+}
+
+.navbar .active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: orangered;
+  left: 0;
+  bottom: -4px;
+  border-radius: 2px;
+}
+
+/* Right-side icons + button */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  cursor: pointer;
+}
+
+/* Search & basket icons */
+.navbar img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+.search-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.basket-icon {
+  width: 20px;
+  height: 20px;
+}
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 15px;
+  min-height: 15px;
+  background-color: orangered;
+  border-radius: 50%;
+  top: -1px;
+  right: -5px;
+  border: 2px solid white; /* gives neat outline */
+}
+
+/* Button */
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  color: black;
+  border: 2px solid orangered;
+  padding: 8px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+  .navbar-menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .navbar-right {
+    gap: 20px;
+  }
+  .navbar button {
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar-menu {
+    display: none; /* hide menu for mobile */
+  }
+}
